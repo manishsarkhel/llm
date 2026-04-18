@@ -31,8 +31,6 @@ with st.expander("Learn about Tokenization", expanded=True):
         cols[i].markdown(f"**{token}**")
         cols[i].markdown(f'<div style="background-color:{colors[i % len(colors)]}; height:10px; border-radius:5px;"></div>', unsafe_allow_html=True)
 
----
-
 # --- MODULE 2: NEXT TOKEN PREDICTION ---
 st.header("2. The Prediction Engine")
 st.write("LLMs are essentially giant 'Next-Token Predictors.' Given a prompt, they calculate the probability of what comes next.")
@@ -64,8 +62,6 @@ df['Probability'] = softmax(df['Logit'], temp)
 st.bar_chart(df.set_index('Token')['Probability'])
 
 st.write(f"At Temperature **{temp}**, the model is most likely to pick: **{df.iloc[df['Probability'].idxmax()]['Token']}**")
-
----
 
 # --- MODULE 3: THE GENERATION CHALLENGE ---
 st.header("3. The Generation Challenge")
